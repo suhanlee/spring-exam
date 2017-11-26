@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<nav th:replace="layout :: nav"></nav>
+<div th:replace="layout :: flash"></div>
+<div class="ui text container">
+    <div class="ui grid">
+        <div class="twelve wide column">
+            <div class="favorites">
+                <h2>User</h2>
+                <p th:text="${user.username}"></p>
+                <p th:text="${user.password}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

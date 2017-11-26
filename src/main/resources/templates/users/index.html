@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: nav"></nav>
+    <div th:replace="layout :: flash"></div>
+    <div class="ui text container">
+        <div class="ui grid">
+            <div class="twelve wide column">
+                <div class="users">
+                    <h2>Users</h2>
+                    <ul th:if="${not #lists.isEmpty(users)}">
+                        <li th:each="user : ${users}">
+                            <a th:href="@{|/users/${user.id}|}" th:text="${user.username}">user name</a>
+                            <a th:href="@{|/users/${user.id}/edit|}">Edit</a>
+                            <form th:action="@{|/users/${user.id}|}" th:method="delete">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <p th:if="${#lists.isEmpty(users)}">user is empty</p>
+                </div>
+                <p><a href="/users/new">New</a></p>
+            </div>
+        </div>
+    </div>
+    <div th:replace="layout :: script"></div>
+</body>

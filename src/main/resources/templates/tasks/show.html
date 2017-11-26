@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<nav th:replace="layout :: nav"></nav>
+<div th:replace="layout :: flash"></div>
+<div class="ui text container">
+    <div class="ui grid">
+        <div class="twelve wide column">
+            <div class="favorites">
+                <h2>Tasks#Show</h2>
+                <b>subject:</b><p th:text="${task.subject}"></p>
+                <b>description:</b><p th:text="${task.description}"></p>
+                <b>complete:</b><p th:text="${task.complete}"></p>
+                <b>assign:</b><p th:if="${task.user}" th:text="${task.user.username}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

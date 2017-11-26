@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: nav"></nav>
+    <div th:replace="layout :: flash"></div>
+    <div class="ui text container">
+        <div class="ui grid">
+            <div class="twelve wide column">
+                <div class="projects">
+                    <h2>Projects</h2>
+                    <ul th:if="${not #lists.isEmpty(projects)}">
+                        <li th:each="project : ${projects}">
+                            <a th:href="@{|/projects/${project.id}|}" th:text="${project.name}">project name</a>
+                            <a th:href="@{|/projects/${project.id}/edit|}">Edit</a>
+                            <form th:action="@{|/projects/${project.id}|}" th:method="delete">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <p th:if="${#lists.isEmpty(projects)}">projects is empty</p>
+                </div>
+                <p><a href="/projects/new">New</a></p>
+            </div>
+        </div>
+    </div>
+</body>
