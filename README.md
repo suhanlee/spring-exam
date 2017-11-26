@@ -2,8 +2,12 @@
 spring example
 
 ### 설명
-- resources/import.sql : 테스트용 더미 데이터를 기록해 둔 파일
-- /users, /api/... 를 제외하고는 로그인 설정이 되어 있으므로 로그인시 user1:1234 로 확인 가능
+- project, user, task(이슈) 로 최소한으로 가정했습니다.
+- project, user 를 먼저 등록 후 task(이슈) 등록이 가능합니다.
+- /projects, /users, /tasks 에서 각각 CRUD 실행이 가능합니다.
+- /users, /api/... 를 제외하고는 로그인 설정이 되어 있으므로 로그인시 아이디 user1, 비번 1234 로 접근 가능합니다.
+- REST API 와 일반 뷰가 섞여 있는 컨트롤러는 분리해서 작업했습니다.
+- resources/import.sql : 테스트용 더미 데이터를 기록해 둔 파일이 존재합니다. 
 
 ### TODO
 - [O] Javascript, Java, Scala 중 한 언어로 구현
