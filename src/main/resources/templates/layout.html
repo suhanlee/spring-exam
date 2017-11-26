@@ -18,6 +18,9 @@
             <a class="item" href="/users">users</a>
             <a class="item" href="/projects">projects</a>
             <a class="item" href="/tasks">tasks</a>
+            <form th:action="@{/logout}" method="post">
+                <button class="item" type="submit">logout</button>
+            </form>
         </div>
     </div>
 </nav>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout :: head"></head>
+<body>
+<div class="ui text container">
+    <div class="ui grid">
+        <div class="twelve wide column">
+            <div class="card">
+                <p>&nbsp;</p>
+                <div th:replace="layout :: flash"></div>
+                <form th:action="@{/login}" th:object="${user}" method="post" class="ui form">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    <div class="field">
+                        <label>username</label>
+                        <input th:field="*{username}" placeholder="username"/>
+                    </div>
+                    <div class="field">
+                        <label>password</label>
+                        <input type="password" th:field="*{password}" placeholder="password"/>
+                    </div>
+                    <div class="field">
+                        <label>Login</label>
+                        <button type="submit" class="ui button">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
